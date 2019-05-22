@@ -2,13 +2,14 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {IMessage} from '../const';
 import {MatSnackBar} from '@angular/material';
+import {StorageService} from './storage.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MessagesService {
 
-  constructor(private http: HttpClient,private snackBar: MatSnackBar) {
+  constructor(private http: HttpClient, private snackBar: MatSnackBar,private storageService:StorageService) {
   }
 
   async loadMessae(id: number) {
@@ -18,10 +19,13 @@ export class MessagesService {
   }
 
   sendMessage(payload: IMessage) {
-this.openSnackBar(JSON.stringify(payload,undefined,2),'good')
+    this.storageService.setItem('msg',payload);
+    this.storageService.getItem('msg');
+    this.openSnackBar(JSON.stringify(payload, undefined, 2), 'good');
   }
 
   openSnackBar(message: string, action: string) {
+
     this.snackBar.open(message, action, {
       duration: 2000,
     });

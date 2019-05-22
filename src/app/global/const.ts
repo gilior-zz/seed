@@ -10,7 +10,8 @@ export interface IMessage {
 }
 
 export interface IAppState {
-  listItems: IListItem[]
+  listItems: IListItem[],
+  msg:IMessage
 }
 
 export module Consts {
@@ -19,6 +20,7 @@ export module Consts {
   export const LOAD_INBOX_ITEMS = 'LOAD_INBOX_ITEMS';
   export const LOAD_OUTBOX_ITEMS = 'LOAD_OUTBOX_ITEMS';
   export const SEND_MESSAGE = 'SEND_MESSAGE';
+  export const SET_MESSAGE = 'SET_MESSAGE';
 
 }
 
@@ -28,7 +30,8 @@ export interface MetaData {
 };
 
 export const initState: IAppState = {
-  listItems: []
+  listItems: [],
+  msg:undefined
 };
 
 

@@ -13,10 +13,14 @@ import {HttpClientModule} from '@angular/common/http';
 import {NgRedux, NgReduxModule} from '@angular-redux/store';
 import {IAppState} from './global/const';
 import {SharedModule} from './global/shared.module';
+import { LoginComponent } from './login/login.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LoginComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -27,6 +31,7 @@ import {SharedModule} from './global/shared.module';
     NgReduxModule,
     SharedModule
   ],
+  entryComponents:[DialogComponent],
   providers: [],
   bootstrap: [AppComponent]
 })

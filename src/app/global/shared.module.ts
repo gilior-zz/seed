@@ -9,7 +9,7 @@ import {ListDisplayComponent} from './list-display/list-display.component';
 import {
   MatButtonModule,
   MatCardModule,
-  MatChipsModule,
+  MatChipsModule, MatDialogModule,
   MatDividerModule,
   MatFormFieldModule,
   MatInputModule, MatOptionModule, MatSelectModule, MatSnackBarModule,
@@ -31,7 +31,7 @@ import {
     MatInputModule,
   MatButtonModule,
   MatSnackBarModule,
-  MatSelectModule,MatOptionModule]
+  MatSelectModule,MatOptionModule,MatDialogModule]
 })
 export class SharedModule {
 }
