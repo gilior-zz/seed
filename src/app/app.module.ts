@@ -8,6 +8,10 @@ import {applyMiddleware, createStore} from 'redux';
 import {appStateReducer} from './store/reducer';
 import {Epics} from './store/epic';
 import {createEpicMiddleware} from 'redux-observable';
+import {CoreModule} from './global/core.module';
+import {HttpClientModule} from '@angular/common/http';
+import {NgRedux, NgReduxModule} from '@angular-redux/store';
+import {IAppState} from './global/const';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,10 @@ import {createEpicMiddleware} from 'redux-observable';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    CoreModule,
+    HttpClientModule,
+    NgReduxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -24,7 +31,7 @@ import {createEpicMiddleware} from 'redux-observable';
 export class AppModule {
 
 
-  constructor(private epics: Epics) {
+  constructor(private epics: Epics,public ngRedux: NgRedux<IAppState>) {
     const epicMiddleware = createEpicMiddleware();
 
     const store = createStore(
@@ -32,6 +39,6 @@ export class AppModule {
       applyMiddleware(epicMiddleware)
     );
     epicMiddleware.run(this.epics.fetchUserEpic);
-
+    ngRedux.provideStore(store);
   }
 }

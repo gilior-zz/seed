@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 
+import {IListItem} from '../const';
+
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {IListItem} from '../global/const';
 
 @Injectable()
-export class OutboxService {
+export class InboxService {
 
   constructor(private http:HttpClient) { }
 

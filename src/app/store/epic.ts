@@ -2,7 +2,8 @@ import {ofType} from 'redux-observable';
 import {Consts} from '../global/const';
 import {map, mergeMap} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
-import {InboxService} from '../services/inbox.service';
+import {InboxService} from '../global/services/inbox.service';
+
 
 @Injectable()
 export class Epics {
