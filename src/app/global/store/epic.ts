@@ -1,9 +1,9 @@
 import {ofType} from 'redux-observable';
-import {Consts} from '../global/const';
+import {Consts} from '../const';
 import {map, mergeMap} from 'rxjs/operators';
 import {Injectable} from '@angular/core';
-import {InboxService} from '../global/services/inbox.service';
-import {MessagesService} from '../global/services/messages.service';
+import {InboxService} from '../services/inbox.service';
+import {MessagesService} from '../services/messages.service';
 import {FluxStandardAction} from 'flux-standard-action';
 
 

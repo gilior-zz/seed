@@ -12,7 +12,7 @@ import {
   MatChipsModule,
   MatDividerModule,
   MatFormFieldModule,
-  MatInputModule, MatSnackBarModule,
+  MatInputModule, MatOptionModule, MatSelectModule, MatSnackBarModule,
   MatToolbarModule
 } from '@angular/material';
 
@@ -30,7 +30,8 @@ import {
     MatFormFieldModule,
     MatInputModule,
   MatButtonModule,
-  MatSnackBarModule]
+  MatSnackBarModule,
+  MatSelectModule,MatOptionModule]
 })
 export class SharedModule {
 }

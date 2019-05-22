@@ -1,5 +1,5 @@
 import {Reducer} from 'redux';
-import {Consts, IAppState} from '../global/const';
+import {Consts, IAppState} from '../const';
 import {FluxStandardAction} from 'flux-standard-action';
 
 export const appStateReducer: Reducer<IAppState> = (state: IAppState, action: FluxStandardAction): IAppState => {

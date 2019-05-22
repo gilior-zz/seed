@@ -1,0 +1,7 @@
+<div>
+  <mat-chip color="primary" selected>{{(message$|async)?.id}}</mat-chip>
+
+  <mat-chip color="primary" selected>{{(message$|async)?.name}}</mat-chip>
+  <br>
+  {{(message$|async)?.content}}
+</div>
