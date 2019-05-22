@@ -7,11 +7,11 @@ import {InboxService} from '../global/services/inbox.service';
 
 @Injectable()
 export class Epics {
-  fetchUserEpic = (action$, state$) => action$.pipe(
+  loadInboxEpic = (action$, state$) => action$.pipe(
     ofType(Consts.LOAD_INBOX_ITEMS),
     mergeMap(action =>
       this.inboxService.fetchItems().pipe(
-        map(payload =>  ({ type: Consts.ITEMS_LOADED, payload }))
+        map(payload =>  ({ type: Consts.INBOX_LOADED, payload }))
       )
     )
   );

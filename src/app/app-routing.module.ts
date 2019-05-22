@@ -9,6 +9,10 @@ const routes: Routes = [
     path: 'outbox',
     loadChildren: './outbox/outbox.module#OutboxModule',
   },
+  {
+    path: 'createMessage',
+    loadChildren: './create/create.module#CreateModule',
+  },
   {path: '', pathMatch: 'full', redirectTo: 'inbox'}
 ];
 

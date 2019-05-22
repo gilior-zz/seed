@@ -1,0 +1,6 @@
+<div *ngFor="let item of items;let i=index">
+  <mat-divider *ngIf="i%7==0"></mat-divider>
+  <app-list-display-item [item]="item" (onSelectItem)="_onSelectItem($event)"></app-list-display-item>
+</div>
+
+

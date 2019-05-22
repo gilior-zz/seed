@@ -15,7 +15,7 @@ export class InboxComponent implements OnInit {
   inboxItems: IListItem[];
   @select() listItems$: Observable<any>;
 
-  constructor(private inboxService: InboxService, private ngRedux: NgRedux<IAppState>) {
+  constructor(private ngRedux: NgRedux<IAppState>) {
   }
 
 

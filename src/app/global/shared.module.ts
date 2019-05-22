@@ -1,15 +1,19 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ListDisplayComponent} from './list-display.component';
+
 import { ListDisplayItemComponent } from './list-display-item/list-display-item.component';
 import {ReactiveFormsModule} from '@angular/forms';
+import { EmptyMessageComponent } from './empty-message/empty-message.component';
+import { MessageComponent } from './message/message.component';
+import {ListDisplayComponent} from './list-display/list-display.component';
+import {MatCardModule, MatChipsModule, MatDividerModule, MatToolbarModule} from '@angular/material';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,MatDividerModule,MatCardModule,MatChipsModule
   ],
-  declarations: [ListDisplayComponent, ListDisplayItemComponent],
-  exports: [ListDisplayComponent,ReactiveFormsModule]
+  declarations: [ListDisplayComponent, ListDisplayItemComponent, EmptyMessageComponent, MessageComponent],
+  exports: [ListDisplayComponent,ReactiveFormsModule,MatToolbarModule,MatCardModule,MatDividerModule]
 })
 export class SharedModule {
 }

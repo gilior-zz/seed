@@ -11,6 +11,6 @@ export class InboxService {
   constructor(private http:HttpClient) { }
 
   fetchItems():Observable<IListItem[]> {
-    return this.http.get<IListItem[]>('assets/data.json');
+    return this.http.get<IListItem[]>('assets/inbox.json');
   }
 }

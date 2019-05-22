@@ -12,6 +12,7 @@ import {CoreModule} from './global/core.module';
 import {HttpClientModule} from '@angular/common/http';
 import {NgRedux, NgReduxModule} from '@angular-redux/store';
 import {IAppState} from './global/const';
+import {SharedModule} from './global/shared.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import {IAppState} from './global/const';
     BrowserAnimationsModule,
     CoreModule,
     HttpClientModule,
-    NgReduxModule
+    NgReduxModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
@@ -38,7 +40,7 @@ export class AppModule {
       appStateReducer,
       applyMiddleware(epicMiddleware)
     );
-    epicMiddleware.run(this.epics.fetchUserEpic);
+    epicMiddleware.run(this.epics.loadInboxEpic);
     ngRedux.provideStore(store);
   }
 }

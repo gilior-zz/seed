@@ -4,29 +4,29 @@ import {IListItem} from '../const';
 @Component({
   selector: 'app-list-display-item',
   template: `
-    <div (click)="onSelect()">
-      <span>{{item.id}}</span>
-      <span>{{item.name}}</span>
-    </div>
-   
+
+    <mat-card (click)="onSelect()"><span>{{item.id}}</span>
+      <span>{{item.name}}</span></mat-card>
   `,
   styles: [
-   `
-      div{
+      `
+      div {
         cursor: pointer;
       }
     `
   ]
 })
 export class ListDisplayItemComponent implements OnInit {
-@Input() item:IListItem;
-@Output() onSelectItem:EventEmitter<IListItem>=new EventEmitter<IListItem>();
-  constructor() { }
+  @Input() item: IListItem;
+  @Output() onSelectItem: EventEmitter<IListItem> = new EventEmitter<IListItem>();
+
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  onSelect(){
+  onSelect() {
     this.onSelectItem.emit(this.item);
   }
 

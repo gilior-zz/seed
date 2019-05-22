@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {IListItem} from './const';
+import {IListItem} from '../const';
 
 @Component({
   selector: 'app-list-display',
@@ -16,7 +16,7 @@ export class ListDisplayComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSelect(item: IListItem) {
+  _onSelectItem(item: IListItem) {
     this.onSelectItem.emit(item);
   }
 

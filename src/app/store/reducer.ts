@@ -6,7 +6,10 @@ export const appStateReducer: Reducer<IAppState> = (state: IAppState, action: Fl
 
   let newStore: IAppState = {...state};
   switch (action.type) {
-    case Consts.ITEMS_LOADED:
+    case Consts.INBOX_LOADED:
+      newStore.listItems = action.payload;
+      return newStore;
+    case Consts.INBOX_LOADED:
       newStore.listItems = action.payload;
       return newStore;
     default:
