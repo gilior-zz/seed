@@ -47,5 +47,6 @@ export class AppModule {
     );
     epicMiddleware.run(rootEpic);
     ngRedux.provideStore(store);
+
   }
 }
