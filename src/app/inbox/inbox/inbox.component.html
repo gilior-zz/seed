@@ -1,1 +1,9 @@
-<app-list-display [items]="inboxItems" onSelect="onSelect($event)"></app-list-display>
+<div class="flex-style">
+  <div  class="flex-style">
+    <app-list-display  [items]="inboxItems" (onSelectItem)="onSelect($event)"></app-list-display>
+  </div>
+  <div class="flex-style">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+

@@ -18,6 +18,8 @@ export module Consts {
   export const OUTBOX_LOADED = 'OUTBOX_LOADED';
   export const LOAD_INBOX_ITEMS = 'LOAD_INBOX_ITEMS';
   export const LOAD_OUTBOX_ITEMS = 'LOAD_OUTBOX_ITEMS';
+  export const SEND_MESSAGE = 'SEND_MESSAGE';
+
 }
 
 export type Payload = any;
